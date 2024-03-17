@@ -5,10 +5,29 @@
   </nav>
   <div>
     <h1>Fiber Tracker</h1>
+    <div v-for="(fiberFood, index) in fiberFoods" :key="index">
+      <h2>{{ fiberFood.name }}</h2>
+      <img :src="fiberFood.image" alt="fiberFood.name" :width="150" />
+      <p>Instruction: {{ fiberFood.instruction }}</p>
+      <p>Score: {{ fiberFood.amount }}</p>
+    </div>
   </div>
   <router-view />
 </template>
 
+<script setup>
+import { ref, onMounted } from "vue";
+const fiberFoods = ref([]);
+
+onMounted(async () => {
+  const response = await fetch("/data/data.json");
+  if (!response.ok) {
+    throw new Error("Failed to fetch data)");
+  }
+  const jsonData = await response.json();
+  fiberFoods.value = jsonData;
+});
+</script>
 <style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;

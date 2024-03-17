@@ -1,0 +1,278 @@
+[
+  {
+    "name": "Volkorenbrood / bruin brood",
+    "image": "",
+    "instruction": "1 slice",
+    "amount": 2
+  },
+  {
+    "name": "Broodje, bruin of volkoren",
+    "image": "",
+    "instruction": "1 slice",
+    "amount": 3
+  },
+  {
+    "name": "donker roggebrood",
+    "image": "",
+    "instruction": "1 slice",
+    "amount": 3
+  },
+  {
+    "name": "licht roggebrood",
+    "image": "",
+    "instruction": "1 slice",
+    "amount": 2
+  },
+  {
+    "name": "wit brood / krentenbrood",
+    "image": "",
+    "instruction": "1 slice",
+    "amount": 1
+  },
+  {
+    "name": "Croissant",
+    "image": "",
+    "instruction": 1,
+    "amount": 1
+  },
+  {
+    "name": "knackerbrood",
+    "image": "",
+    "instruction": 1,
+    "amount": 1
+  },
+  {
+    "name": "Vezelrijk knackebrood",
+    "image": "",
+    "instruction": 1,
+    "amount": 2
+  },
+  {
+    "name": "Ontbijtkoek",
+    "image": "",
+    "instruction": 1,
+    "amount": 1
+  },
+  {
+    "name": "Zemelen",
+    "image": "",
+    "instruction": "5 spoons",
+    "amount": 12
+  },
+  {
+    "name": "Tarwekiemen",
+    "image": "",
+    "instruction": "4 spoons",
+    "amount": 8
+  },
+  {
+    "name": "lijnzaad",
+    "image": "",
+    "instruction": "1 spoons",
+    "amount": 1
+  },
+  {
+    "name": "All Bran",
+    "image": "",
+    "instruction": "5 spoons",
+    "amount": 7
+  },
+  {
+    "name": "Muesli",
+    "image": "",
+    "instruction": "3 spoons",
+    "amount": 2
+  },
+  {
+    "name": "Cruesli",
+    "image": "",
+    "instruction": "3 spoons",
+    "amount": 7.5
+  },
+  {
+    "name": "Cornflakes",
+    "image": "",
+    "instruction": "6 spoons",
+    "amount": 1
+  },
+  {
+    "name": "Brinta",
+    "image": "",
+    "instruction": "5 spoons",
+    "amount": 3
+  },
+  {
+    "name": "Havermout",
+    "image": "",
+    "instruction": "5 spoons",
+    "amount": 2
+  },
+  {
+    "name": "Hero fruitontbijt",
+    "image": "",
+    "instruction": "250 ml",
+    "amount": 5
+  },
+  {
+    "name": "Aardappelen",
+    "image": "",
+    "instruction": "1 medium",
+    "amount": 1.5
+  },
+  {
+    "name": "Pasta",
+    "image": "",
+    "instruction": "1 big spoon",
+    "amount": 0.5
+  },
+  {
+    "name": "Volkoren Pasta",
+    "image": "",
+    "instruction": "1 big spoon",
+    "amount": 3
+  },
+  {
+    "name": "Rijst",
+    "image": "",
+    "instruction": "1 big spoon",
+    "amount": 0.5
+  },
+  {
+    "name": "Zilvervliesrijst",
+    "image": "",
+    "instruction": "1 big spoon",
+    "amount": 1
+  },
+  {
+    "name": "Erwtensoep",
+    "image": "",
+    "instruction": "1 bowl",
+    "amount": 2.5
+  },
+  {
+    "name": "Bruine / witten bonen",
+    "image": "",
+    "instruction": "1 big spoon",
+    "amount": 5.5
+  },
+  {
+    "name": "gekookte groenten",
+    "image": "",
+    "instruction": "1 big spoon",
+    "amount": 1.5
+  },
+  {
+    "name": "rauwe groente",
+    "image": "",
+    "instruction": "1 bowl",
+    "amount": 1
+  },
+  {
+    "name": "Bramen / bessen / frambozen / aardbeien",
+    "image": "",
+    "instruction": "1 bowl",
+    "amount": 7
+  },
+  {
+    "name": "ander (vers) fruit",
+    "image": "",
+    "instruction": "1 unit",
+    "amount": 3
+  },
+  {
+    "name": "Hero Fruit2Day",
+    "image": "",
+    "instruction": "200 ml",
+    "amount": 2
+  },
+  {
+    "name": "Gedroogde zuidvruchten",
+    "image": "",
+    "instruction": "6 pieces, 50 gr",
+    "amount": 7
+  },
+  {
+    "name": "krenten / rozijnen",
+    "image": "",
+    "instruction": "1 spoon",
+    "amount": 1
+  },
+  {
+    "name": "vijgen, gedroogd",
+    "image": "",
+    "instruction": "3 units",
+    "amount": 11
+  },
+  {
+    "name": "Dadels",
+    "image": "",
+    "instruction": "10 units",
+    "amount": 4
+  },
+  {
+    "name": "vruchtensap met vruchtvlees",
+    "image": "",
+    "instruction": "1 glass",
+    "amount": 1
+  },
+  {
+    "name": "Kokosmakroon",
+    "image": "",
+    "instruction": "1 big",
+    "amount": 4.5
+  },
+  {
+    "name": "noten / pinda's",
+    "image": "",
+    "instruction": "1 spoon",
+    "amount": 1.5
+  },
+  {
+    "name": "chips",
+    "image": "",
+    "instruction": "1 pouch",
+    "amount": 1
+  },
+  {
+    "name": "Mueslireep / mueslikoek",
+    "image": "",
+    "instruction": "1 stuck",
+    "amount": 1
+  },
+  {
+    "name": "evergreen / fruitreep",
+    "image": "",
+    "instruction": "1 stuck",
+    "amount": 1
+  },
+  {
+    "name": "Bammetje",
+    "image": "",
+    "instruction": "1 slice",
+    "amount": 4
+  },
+  {
+    "name": "Volkoren Biscuit",
+    "image": "",
+    "instruction": "1 slice",
+    "amount": 0.3
+  },
+  {
+    "name": "Pindakas, met/ zonder stukjes",
+    "image": "",
+    "instruction": "1 slice (on bread)",
+    "amount": 1
+  },
+  {
+    "name": "Appelstroop",
+    "image": "",
+    "instruction": "1 slice (on bread)",
+    "amount": 1
+  },
+  {
+    "name": "kokosbrood",
+    "image": "",
+    "instruction": "1 slice",
+    "amount": 2
+  }
+]

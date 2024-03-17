@@ -5,7 +5,8 @@
   </nav>
   <div>
     <h1>Fiber Tracker</h1>
-    <div v-for="(fiberFood, index) in fiberFoods" :key="index">
+    <input type="text" v-model="searchQuery" placeholder="brown bread" />
+    <div v-for="(fiberFood, index) in filteredFiberFoods" :key="index">
       <h2>{{ fiberFood.name }}</h2>
       <img :src="fiberFood.image" alt="fiberFood.name" :width="150" />
       <p>Instruction: {{ fiberFood.instruction }}</p>
@@ -16,8 +17,9 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from "vue";
+import { ref, onMounted, computed } from "vue";
 const fiberFoods = ref([]);
+const searchQuery = ref("");
 
 onMounted(async () => {
   const response = await fetch("/data/data.json");
@@ -26,6 +28,13 @@ onMounted(async () => {
   }
   const jsonData = await response.json();
   fiberFoods.value = jsonData;
+});
+
+const filteredFiberFoods = computed(() => {
+  const query = searchQuery.value.toLowerCase();
+  return fiberFoods.value.filter((fiberFood) =>
+    fiberFood.name.toLowerCase().includes(query)
+  );
 });
 </script>
 <style>

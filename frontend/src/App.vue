@@ -8,7 +8,11 @@
     <input type="text" v-model="searchQuery" placeholder="brown bread" />
     <div v-for="(fiberFood, index) in filteredFiberFoods" :key="index">
       <h2>{{ fiberFood.name }}</h2>
-      <img :src="fiberFood.image" alt="fiberFood.name" :width="150" />
+      <img
+        :src="imageBaseUrl + fiberFood.image"
+        alt="fiberFood.name"
+        :width="150"
+      />
       <p>Instruction: {{ fiberFood.instruction }}</p>
       <p>Score: {{ fiberFood.amount }}</p>
     </div>
@@ -20,14 +24,27 @@
 import { ref, onMounted, computed } from "vue";
 const fiberFoods = ref([]);
 const searchQuery = ref("");
+const imageBaseUrl =
+  process.env.NODE_ENV === "production" ? "/fiber-tracker/" : "";
 
 onMounted(async () => {
-  const response = await fetch("/data/data.json");
-  if (!response.ok) {
-    throw new Error("Failed to fetch data)");
+  if (process.env.NODE_ENV !== "production") {
+    const response = await fetch("/data/data.json");
+    if (!response.ok) {
+      throw new Error("Failed to fetch data)");
+    }
+    const jsonData = await response.json();
+    fiberFoods.value = jsonData;
+  } else if (process.env.NODE_ENV === "production") {
+    const response = await fetch(
+      "/fiber-tracker/data/data.json"
+    );
+    if (!response.ok) {
+      throw new Error("Failed to fetch data)");
+    }
+    const jsonData = await response.json();
+    fiberFoods.value = jsonData;
   }
-  const jsonData = await response.json();
-  fiberFoods.value = jsonData;
 });
 
 const filteredFiberFoods = computed(() => {

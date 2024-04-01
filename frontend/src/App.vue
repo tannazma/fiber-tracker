@@ -99,10 +99,10 @@ const filteredFiberFoods = computed(() => {
   }
 }
 
-@media (max-width: 580px) {
+@media (max-width: 480px) {
   .fiber-food-card {
-    flex: 0 0 calc(100% - 20px);
-    max-width: calc(100% - 20px);
+    flex: 0 0 calc(50% - 10px);
+    max-width: calc(50% - 10px);
   }
 }
 nav {

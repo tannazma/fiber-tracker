@@ -85,14 +85,21 @@ const filteredFiberFoods = computed(() => {
   max-width: calc(20% - 20px);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 968px) {
   .fiber-food-card {
     flex: 0 0 calc(30% - 20px);
+    max-width: calc(30% - 20px);
+  }
+}
+
+@media (max-width: 768px) {
+  .fiber-food-card {
+    flex: 0 0 calc(50% - 20px);
     max-width: calc(50% - 20px);
   }
 }
 
-@media (max-width: 380px) {
+@media (max-width: 580px) {
   .fiber-food-card {
     flex: 0 0 calc(100% - 20px);
     max-width: calc(100% - 20px);

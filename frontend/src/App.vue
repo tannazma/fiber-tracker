@@ -6,6 +6,7 @@
     </nav>
     <h1>Fiber Tracker</h1>
     <input type="text" v-model="searchQuery" placeholder="brown bread" />
+    <button @click="submit">+</button>
     <div class="fiber-foods-container">
       <div
         v-for="(fiberFood, index) in filteredFiberFoods"
@@ -61,6 +62,10 @@ const filteredFiberFoods = computed(() => {
     fiberFood.name.toLowerCase().includes(query)
   );
 });
+
+const submit = () => {
+  alert();
+};
 </script>
 
 <style>

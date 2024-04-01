@@ -1,13 +1,21 @@
 <template>
+  <div>
   <nav>
     <!-- <router-link to="/">Home</router-link> | -->
     <!-- <router-link to="/about">About</router-link> -->
   </nav>
-  <div>
     <h1>Fiber Tracker</h1>
     <input type="text" v-model="searchQuery" placeholder="brown bread" />
-    <div v-for="(fiberFood, index) in filteredFiberFoods" :key="index">
+    <div class="fiber-foods-container">
+      <div
+        v-for="(fiberFood, index) in filteredFiberFoods"
+        :key="index"
+        class="fiber-food-card"
+      >
+        <el-card>
+          <template #header>
       <h2>{{ fiberFood.name }}</h2>
+          </template>
       <img
         :src="imageBaseUrl + fiberFood.image"
         alt="fiberFood.name"
@@ -15,9 +23,11 @@
       />
       <p>Instruction: {{ fiberFood.instruction }}</p>
       <p>Score: {{ fiberFood.amount }}</p>
+        </el-card>
+      </div>
     </div>
+    <router-view />
   </div>
-  <router-view />
 </template>
 
 <script setup>
@@ -36,9 +46,7 @@ onMounted(async () => {
     const jsonData = await response.json();
     fiberFoods.value = jsonData;
   } else if (process.env.NODE_ENV === "production") {
-    const response = await fetch(
-      "/fiber-tracker/data/data.json"
-    );
+    const response = await fetch("/fiber-tracker/data/data.json");
     if (!response.ok) {
       throw new Error("Failed to fetch data)");
     }

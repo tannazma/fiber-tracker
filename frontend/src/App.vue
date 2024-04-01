@@ -1,9 +1,9 @@
 <template>
   <div>
-  <nav>
-    <!-- <router-link to="/">Home</router-link> | -->
-    <!-- <router-link to="/about">About</router-link> -->
-  </nav>
+    <nav>
+      <!-- <router-link to="/">Home</router-link> | -->
+      <!-- <router-link to="/about">About</router-link> -->
+    </nav>
     <h1>Fiber Tracker</h1>
     <input type="text" v-model="searchQuery" placeholder="brown bread" />
     <div class="fiber-foods-container">
@@ -14,15 +14,15 @@
       >
         <el-card>
           <template #header>
-      <h2>{{ fiberFood.name }}</h2>
+            <h2>{{ fiberFood.name }}</h2>
           </template>
-      <img
-        :src="imageBaseUrl + fiberFood.image"
-        alt="fiberFood.name"
-        :width="150"
-      />
-      <p>Instruction: {{ fiberFood.instruction }}</p>
-      <p>Score: {{ fiberFood.amount }}</p>
+          <img
+            :src="imageBaseUrl + fiberFood.image"
+            alt="fiberFood.name"
+            :width="150"
+          />
+          <p>Instruction: {{ fiberFood.instruction }}</p>
+          <p>Score: {{ fiberFood.amount }}</p>
         </el-card>
       </div>
     </div>
@@ -62,6 +62,7 @@ const filteredFiberFoods = computed(() => {
   );
 });
 </script>
+
 <style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
@@ -70,7 +71,33 @@ const filteredFiberFoods = computed(() => {
   text-align: center;
   color: #2c3e50;
 }
+.fiber-foods-container {
+  padding-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+}
 
+.fiber-food-card {
+  flex: 0 0 calc(20% - 20px);
+  max-width: calc(20% - 20px);
+}
+
+@media (max-width: 768px) {
+  .fiber-food-card {
+    flex: 0 0 calc(30% - 20px);
+    max-width: calc(50% - 20px);
+  }
+}
+
+@media (max-width: 380px) {
+  .fiber-food-card {
+    flex: 0 0 calc(100% - 20px);
+    max-width: calc(100% - 20px);
+  }
+}
 nav {
   padding: 30px;
 }

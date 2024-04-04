@@ -7,6 +7,15 @@
     <h1>Fiber Tracker</h1>
     <input type="text" v-model="searchQuery" placeholder="brown bread" />
     <button @click="submit">+</button>
+    <select v-model="selected" ref="selectMenu">
+      <option
+        v-for="(option, index) in options"
+        :value="option.value"
+        :key="index"
+      >
+        {{ option.text }}
+      </option>
+    </select>
     <div class="fiber-foods-container">
       <div
         v-for="(fiberFood, index) in filteredFiberFoods"
@@ -35,6 +44,13 @@
 import { ref, onMounted, computed } from "vue";
 const fiberFoods = ref([]);
 const searchQuery = ref("");
+const selected = ref("A");
+const selectMenu = ref(null);
+const options = ref([
+  { text: "One", value: "A" },
+  { text: "Two", value: "B" },
+  { text: "Three", value: "C" },
+]);
 const imageBaseUrl =
   process.env.NODE_ENV === "production" ? "/fiber-tracker/" : "";
 
@@ -64,7 +80,9 @@ const filteredFiberFoods = computed(() => {
 });
 
 const submit = () => {
-  alert();
+  if (selectMenu.value) {
+    selectMenu.value.focus();
+  }
 };
 </script>
 

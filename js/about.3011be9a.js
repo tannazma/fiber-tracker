@@ -1,2 +1,0 @@
-"use strict";(self["webpackChunkfiber_tracker_frontend"]=self["webpackChunkfiber_tracker_frontend"]||[]).push([[594],{603:function(n,r,e){e.r(r),e.d(r,{default:function(){return k}});var t=e(6768);const u={class:"about"},a=(0,t.Lk)("h1",null,"This is an about page",-1),c=[a];function s(n,r){return(0,t.uX)(),(0,t.CE)("div",u,c)}var f=e(1241);const i={},o=(0,f.A)(i,[["render",s]]);var k=o}}]);
-//# sourceMappingURL=about.3011be9a.js.map

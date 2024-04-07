@@ -105,7 +105,7 @@ const addFiberFood = () => {
     amount: amount.value,
     date: new Date(),
   };
-  const existingFiber = JSON.parse(localStorage.getItem("fiber"));
+  const existingFiber = JSON.parse(localStorage.getItem("fiber") ?? '[]');
   existingFiber.push(result);
   localStorage.setItem("fiber", JSON.stringify(existingFiber));
   // Reset form

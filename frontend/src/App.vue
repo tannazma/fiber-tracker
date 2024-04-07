@@ -6,7 +6,13 @@
     </nav>
     <h1>Fiber Tracker</h1>
     <input type="text" v-model="searchQuery" placeholder="brown bread" />
-    <button @click="submit">+</button>
+    <button @click="showForm = true">+</button>
+
+    <div v-if="showForm">
+      <div>
+        <span @click="showForm = false">&times;</span>
+        <h2>Add Fiber Food</h2>
+        <label for="fiberFood">Select Fiber Food:</label>
     <select v-model="selected" ref="selectMenu">
       <option
         v-for="(option, index) in options"
@@ -16,6 +22,14 @@
         {{ option.text }}
       </option>
     </select>
+        <div>
+          <label for="amount">Amount:</label>
+          <input type="text" v-model="amount" />
+        </div>
+        <button @click="addFiberFood">Add</button>
+      </div>
+    </div>
+
     <div class="fiber-foods-container">
       <div
         v-for="(fiberFood, index) in filteredFiberFoods"
@@ -44,13 +58,10 @@
 import { ref, onMounted, computed } from "vue";
 const fiberFoods = ref([]);
 const searchQuery = ref("");
-const selected = ref("A");
-const selectMenu = ref(null);
-const options = ref([
-  { text: "One", value: "A" },
-  { text: "Two", value: "B" },
-  { text: "Three", value: "C" },
-]);
+const selected = ref("");
+const options = ref([]);
+const showForm = ref(false);
+const amount = ref("");
 const imageBaseUrl =
   process.env.NODE_ENV === "production" ? "/fiber-tracker/" : "";
 
@@ -62,6 +73,7 @@ onMounted(async () => {
     }
     const jsonData = await response.json();
     fiberFoods.value = jsonData;
+    updateOptions();
   } else if (process.env.NODE_ENV === "production") {
     const response = await fetch("/fiber-tracker/data/data.json");
     if (!response.ok) {
@@ -69,6 +81,7 @@ onMounted(async () => {
     }
     const jsonData = await response.json();
     fiberFoods.value = jsonData;
+    updateOptions();
   }
 });
 
@@ -79,10 +92,21 @@ const filteredFiberFoods = computed(() => {
   );
 });
 
-const submit = () => {
-  if (selectMenu.value) {
-    selectMenu.value.focus();
-  }
+const updateOptions = () => {
+  options.value = fiberFoods.value.map((fiberFoods) => ({
+    text: fiberFoods.name,
+    value: fiberFoods.name,
+  }));
+};
+
+const addFiberFood = () => {
+  console.log("Selected fiber food:", selected.value);
+  console.log("Amount:", amount.value);
+  // Reset form
+  selected.value = "";
+  amount.value = "";
+  // Close modal
+  showForm.value = false;
 };
 </script>
 

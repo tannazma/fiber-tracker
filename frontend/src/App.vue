@@ -5,6 +5,14 @@
       <!-- <router-link to="/about">About</router-link> -->
     </nav>
     <h1>Fiber Tracker</h1>
+    <div id="app-calendar"></div>
+    <div class="background"></div>
+    <div class="dialogBox"></div>
+    <div class="input-task"></div>
+    <div class="add-task"></div>
+    <div class="add-event"></div>
+    <div class="buttonContainer"></div>
+    <div class="monthAndYear"></div>
     <input type="text" v-model="searchQuery" placeholder="brown bread" />
     <button @click="showForm = true">+</button>
 
@@ -56,6 +64,7 @@
 
 <script setup>
 import { ref, onMounted, computed } from "vue";
+import "calendar-todolist/styles.css";
 const fiberFoods = ref([]);
 const searchQuery = ref("");
 const selected = ref("");
@@ -66,6 +75,8 @@ const imageBaseUrl =
   process.env.NODE_ENV === "production" ? "/fiber-tracker/" : "";
 
 onMounted(async () => {
+  import("calendar-todolist");
+
   if (process.env.NODE_ENV !== "production") {
     const response = await fetch("/data/data.json");
     if (!response.ok) {

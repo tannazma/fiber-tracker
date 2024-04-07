@@ -100,19 +100,23 @@ const updateOptions = () => {
 };
 
 const addFiberFood = () => {
-  const result = {
-    name: selected.value,
-    amount: amount.value,
-    date: new Date(),
-  };
-  const existingFiber = JSON.parse(localStorage.getItem("fiber") ?? '[]');
-  existingFiber.push(result);
-  localStorage.setItem("fiber", JSON.stringify(existingFiber));
+  localStorageUtilities();
   // Reset form
   selected.value = "";
   amount.value = "";
   // Close modal
   showForm.value = false;
+};
+
+const localStorageUtilities = () => {
+  const result = {
+    name: selected.value,
+    amount: amount.value,
+    date: new Date(),
+  };
+  const existingFiber = JSON.parse(localStorage.getItem("fiber") ?? "[]");
+  existingFiber.push(result);
+  localStorage.setItem("fiber", JSON.stringify(existingFiber));
 };
 </script>
 

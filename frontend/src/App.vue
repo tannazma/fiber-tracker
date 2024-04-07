@@ -46,12 +46,12 @@
       >
         <el-card>
           <template #header>
-            <h2>{{ fiberFood.name }}</h2>
+            <h2 style="height: 40px">{{ fiberFood.name }}</h2>
           </template>
           <img
             :src="imageBaseUrl + fiberFood.image"
             alt="fiberFood.name"
-            :width="150"
+            :height="100"
           />
           <p>Instruction: {{ fiberFood.instruction }}</p>
           <p>Score: {{ fiberFood.amount }}</p>
@@ -140,7 +140,7 @@ const localStorageUtilities = () => {
   color: #2c3e50;
 }
 .fiber-foods-container {
-  padding-top: 20px;
+  padding: 20px;
   display: flex;
   flex-wrap: wrap;
   align-items: flex-start;

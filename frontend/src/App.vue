@@ -13,15 +13,15 @@
         <span @click="showForm = false">&times;</span>
         <h2>Add Fiber Food</h2>
         <label for="fiberFood">Select Fiber Food:</label>
-    <select v-model="selected" ref="selectMenu">
-      <option
-        v-for="(option, index) in options"
-        :value="option.value"
-        :key="index"
-      >
-        {{ option.text }}
-      </option>
-    </select>
+        <select v-model="selected" ref="selectMenu">
+          <option
+            v-for="(option, index) in options"
+            :value="option.value"
+            :key="index"
+          >
+            {{ option.text }}
+          </option>
+        </select>
         <div>
           <label for="amount">Amount:</label>
           <input type="text" v-model="amount" />
@@ -100,8 +100,14 @@ const updateOptions = () => {
 };
 
 const addFiberFood = () => {
-  console.log("Selected fiber food:", selected.value);
-  console.log("Amount:", amount.value);
+  const result = {
+    name: selected.value,
+    amount: amount.value,
+    date: new Date(),
+  };
+  const existingFiber = JSON.parse(localStorage.getItem("fiber"));
+  existingFiber.push(result);
+  localStorage.setItem("fiber", JSON.stringify(existingFiber));
   // Reset form
   selected.value = "";
   amount.value = "";

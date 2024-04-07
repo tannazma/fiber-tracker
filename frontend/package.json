@@ -11,6 +11,7 @@
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
+    "calendar-todolist": "github:tannazma/calender-todolist",
     "core-js": "^3.8.3",
     "element-plus": "^2.6.3",
     "typescript": "^5.4.2",
